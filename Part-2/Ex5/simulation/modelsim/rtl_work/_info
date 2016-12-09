@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\VERI 17.11.16\Part 2\ex5\simulation\modelsim
+vcounter_8
+!i10b 1
+!s100 AnB8i_dBT@>=]VXB@5[FT0
+I[iX>l94Sj3H5?oBkiT9NM0
+Vdn7aTnOzPKdeZA;zmQ`Cl3
+Z1 dD:\VERI 17.11.16\Part 2\ex5\simulation\modelsim
+w1479978621
+8D:/VERI 17.11.16/Part 2/ex5/counter_8.v
+FD:/VERI 17.11.16/Part 2/ex5/counter_8.v
+L0 3
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1479979685.395000
+!s107 D:/VERI 17.11.16/Part 2/ex5/counter_8.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/VERI 17.11.16/Part 2/ex5|D:/VERI 17.11.16/Part 2/ex5/counter_8.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work {+incdir+D:/VERI 17.11.16/Part 2/ex5} -O0
