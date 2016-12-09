@@ -1,0 +1,19 @@
+module fsm(
+		en_lfsr,
+		start_delay,
+		ledr,
+		clock,
+		tick,
+		trigger,
+		timeout
+		);
+		
+		output en_lfsr;
+		output start_delay;
+		output [9:0] LEDR;
+		input clock;
+		input tick;
+		input trigger;
+		input timeout;
+		
+		always (posedge
