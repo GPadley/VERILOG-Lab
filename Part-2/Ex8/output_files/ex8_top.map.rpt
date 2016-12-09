@@ -1,0 +1,580 @@
+Analysis & Synthesis report for ex8_top
+Wed Nov 30 17:35:37 2016
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ex8_top|fsm:comb_5|state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: div_50000:comb_3
+ 15. Parameter Settings for User Entity Instance: div2500:comb_4
+ 16. Parameter Settings for User Entity Instance: fsm:comb_5
+ 17. Port Connectivity Checks: "bin2bcd_16:comb_8|add3_ge5:A31"
+ 18. Port Connectivity Checks: "bin2bcd_16:comb_8|add3_ge5:A19"
+ 19. Port Connectivity Checks: "bin2bcd_16:comb_8|add3_ge5:A10"
+ 20. Port Connectivity Checks: "bin2bcd_16:comb_8|add3_ge5:A4"
+ 21. Port Connectivity Checks: "bin2bcd_16:comb_8|add3_ge5:A1"
+ 22. Port Connectivity Checks: "bin2bcd_16:comb_8"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Nov 30 17:35:37 2016       ;
+; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name                   ; ex8_top                                     ;
+; Top-level Entity Name           ; ex8_top                                     ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 72                                          ;
+; Total pins                      ; 50                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; ex8_top            ; ex8_top            ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                               ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+; ../ex6/add3_ge5.v                ; yes             ; User Verilog HDL File  ; /home/george/Documents/VERI 17.11.16/Part 2/ex6/add3_ge5.v ;         ;
+; ../../My Lib/hex_to_7seg.v       ; yes             ; User Verilog HDL File  ; /home/george/Documents/VERI 17.11.16/My Lib/hex_to_7seg.v  ;         ;
+; ../../My Lib/div_50000.v         ; yes             ; User Verilog HDL File  ; /home/george/Documents/VERI 17.11.16/My Lib/div_50000.v    ;         ;
+; ../../My Lib/bin2bcd_16.v        ; yes             ; User Verilog HDL File  ; /home/george/Documents/VERI 17.11.16/My Lib/bin2bcd_16.v   ;         ;
+; ex8_top.v                        ; yes             ; User Verilog HDL File  ; /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v  ;         ;
+; div2500.v                        ; yes             ; User Verilog HDL File  ; /home/george/Documents/VERI 17.11.16/Part 2/ex8/div2500.v  ;         ;
+; lfsr.v                           ; yes             ; User Verilog HDL File  ; /home/george/Documents/VERI 17.11.16/Part 2/ex8/lfsr.v     ;         ;
+; fsm.v                            ; yes             ; User Verilog HDL File  ; /home/george/Documents/VERI 17.11.16/Part 2/ex8/fsm.v      ;         ;
+; delay.v                          ; yes             ; User Verilog HDL File  ; /home/george/Documents/VERI 17.11.16/Part 2/ex8/delay.v    ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                             ;
++---------------------------------------------+---------------------------+
+; Resource                                    ; Usage                     ;
++---------------------------------------------+---------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 126                       ;
+;                                             ;                           ;
+; Combinational ALUT usage for logic          ; 224                       ;
+;     -- 7 input functions                    ; 0                         ;
+;     -- 6 input functions                    ; 24                        ;
+;     -- 5 input functions                    ; 11                        ;
+;     -- 4 input functions                    ; 112                       ;
+;     -- <=3 input functions                  ; 77                        ;
+;                                             ;                           ;
+; Dedicated logic registers                   ; 72                        ;
+;                                             ;                           ;
+; I/O pins                                    ; 50                        ;
+;                                             ;                           ;
+; Total DSP Blocks                            ; 0                         ;
+;                                             ;                           ;
+; Maximum fan-out node                        ; div_50000:comb_3|clockout ;
+; Maximum fan-out                             ; 50                        ;
+; Total fan-out                               ; 1096                      ;
+; Average fan-out                             ; 2.77                      ;
++---------------------------------------------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                        ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+-------------+--------------+
+; |ex8_top                   ; 224 (0)             ; 72 (0)                    ; 0                 ; 0          ; 50   ; 0            ; |ex8_top                                ; ex8_top     ; work         ;
+;    |bin2bcd_16:comb_8|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8              ; bin2bcd_16  ; work         ;
+;       |add3_ge5:A11|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A11 ; add3_ge5    ; work         ;
+;       |add3_ge5:A12|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A12 ; add3_ge5    ; work         ;
+;       |add3_ge5:A14|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A14 ; add3_ge5    ; work         ;
+;       |add3_ge5:A15|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A15 ; add3_ge5    ; work         ;
+;       |add3_ge5:A16|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A16 ; add3_ge5    ; work         ;
+;       |add3_ge5:A17|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A17 ; add3_ge5    ; work         ;
+;       |add3_ge5:A18|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A18 ; add3_ge5    ; work         ;
+;       |add3_ge5:A20|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A20 ; add3_ge5    ; work         ;
+;       |add3_ge5:A21|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A21 ; add3_ge5    ; work         ;
+;       |add3_ge5:A22|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A22 ; add3_ge5    ; work         ;
+;       |add3_ge5:A24|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A24 ; add3_ge5    ; work         ;
+;       |add3_ge5:A25|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A25 ; add3_ge5    ; work         ;
+;       |add3_ge5:A26|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A26 ; add3_ge5    ; work         ;
+;       |add3_ge5:A27|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A27 ; add3_ge5    ; work         ;
+;       |add3_ge5:A28|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A28 ; add3_ge5    ; work         ;
+;       |add3_ge5:A29|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A29 ; add3_ge5    ; work         ;
+;       |add3_ge5:A30|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A30 ; add3_ge5    ; work         ;
+;       |add3_ge5:A32|       ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A32 ; add3_ge5    ; work         ;
+;       |add3_ge5:A33|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A33 ; add3_ge5    ; work         ;
+;       |add3_ge5:A34|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A34 ; add3_ge5    ; work         ;
+;       |add3_ge5:A35|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A35 ; add3_ge5    ; work         ;
+;       |add3_ge5:A3|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A3  ; add3_ge5    ; work         ;
+;       |add3_ge5:A5|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A5  ; add3_ge5    ; work         ;
+;       |add3_ge5:A7|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A7  ; add3_ge5    ; work         ;
+;       |add3_ge5:A8|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A8  ; add3_ge5    ; work         ;
+;       |add3_ge5:A9|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|bin2bcd_16:comb_8|add3_ge5:A9  ; add3_ge5    ; work         ;
+;    |delay:comb_9|          ; 35 (35)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|delay:comb_9                   ; delay       ; work         ;
+;    |div2500:comb_4|        ; 22 (22)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|div2500:comb_4                 ; div2500     ; work         ;
+;    |div_50000:comb_3|      ; 20 (20)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|div_50000:comb_3               ; div_50000   ; work         ;
+;    |fsm:comb_5|            ; 16 (16)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|fsm:comb_5                     ; fsm         ; work         ;
+;    |hex_to_7seg:SEG0|      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|hex_to_7seg:SEG0               ; hex_to_7seg ; work         ;
+;    |hex_to_7seg:SEG1|      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|hex_to_7seg:SEG1               ; hex_to_7seg ; work         ;
+;    |hex_to_7seg:SEG2|      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|hex_to_7seg:SEG2               ; hex_to_7seg ; work         ;
+;    |hex_to_7seg:SEG3|      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|hex_to_7seg:SEG3               ; hex_to_7seg ; work         ;
+;    |hex_to_7seg:SEG4|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|hex_to_7seg:SEG4               ; hex_to_7seg ; work         ;
+;    |lfsr:comb_7|           ; 3 (3)               ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |ex8_top|lfsr:comb_7                    ; lfsr        ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ex8_top|fsm:comb_5|state                                                                                                                                                                                                             ;
++-------------------+-----------------+-------------+-----------------+------------------+---------------+-----------------+------------------+-----------------+-------------------+------------------+-----------------+-----------------+------------+
+; Name              ; state.TENTH_LED ; state.DELAY ; state.NINTH_LED ; state.EIGHTH_LED ; state.TURNOFF ; state.FIFTH_LED ; state.FOURTH_LED ; state.SIXTH_LED ; state.SEVENTH_LED ; state.SECOND_LED ; state.THIRD_LED ; state.FIRST_LED ; state.IDLE ;
++-------------------+-----------------+-------------+-----------------+------------------+---------------+-----------------+------------------+-----------------+-------------------+------------------+-----------------+-----------------+------------+
+; state.IDLE        ; 0               ; 0           ; 0               ; 0                ; 0             ; 0               ; 0                ; 0               ; 0                 ; 0                ; 0               ; 0               ; 0          ;
+; state.FIRST_LED   ; 0               ; 0           ; 0               ; 0                ; 0             ; 0               ; 0                ; 0               ; 0                 ; 0                ; 0               ; 1               ; 1          ;
+; state.THIRD_LED   ; 0               ; 0           ; 0               ; 0                ; 0             ; 0               ; 0                ; 0               ; 0                 ; 0                ; 1               ; 0               ; 1          ;
+; state.SECOND_LED  ; 0               ; 0           ; 0               ; 0                ; 0             ; 0               ; 0                ; 0               ; 0                 ; 1                ; 0               ; 0               ; 1          ;
+; state.SEVENTH_LED ; 0               ; 0           ; 0               ; 0                ; 0             ; 0               ; 0                ; 0               ; 1                 ; 0                ; 0               ; 0               ; 1          ;
+; state.SIXTH_LED   ; 0               ; 0           ; 0               ; 0                ; 0             ; 0               ; 0                ; 1               ; 0                 ; 0                ; 0               ; 0               ; 1          ;
+; state.FOURTH_LED  ; 0               ; 0           ; 0               ; 0                ; 0             ; 0               ; 1                ; 0               ; 0                 ; 0                ; 0               ; 0               ; 1          ;
+; state.FIFTH_LED   ; 0               ; 0           ; 0               ; 0                ; 0             ; 1               ; 0                ; 0               ; 0                 ; 0                ; 0               ; 0               ; 1          ;
+; state.TURNOFF     ; 0               ; 0           ; 0               ; 0                ; 1             ; 0               ; 0                ; 0               ; 0                 ; 0                ; 0               ; 0               ; 1          ;
+; state.EIGHTH_LED  ; 0               ; 0           ; 0               ; 1                ; 0             ; 0               ; 0                ; 0               ; 0                 ; 0                ; 0               ; 0               ; 1          ;
+; state.NINTH_LED   ; 0               ; 0           ; 1               ; 0                ; 0             ; 0               ; 0                ; 0               ; 0                 ; 0                ; 0               ; 0               ; 1          ;
+; state.DELAY       ; 0               ; 1           ; 0               ; 0                ; 0             ; 0               ; 0                ; 0               ; 0                 ; 0                ; 0               ; 0               ; 1          ;
+; state.TENTH_LED   ; 1               ; 0           ; 0               ; 0                ; 0             ; 0               ; 0                ; 0               ; 0                 ; 0                ; 0               ; 0               ; 1          ;
++-------------------+-----------------+-------------+-----------------+------------------+---------------+-----------------+------------------+-----------------+-------------------+------------------+-----------------+-----------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; fsm:comb_5|en_lfsr                                 ; fsm:comb_5|WideOr8  ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; fsm:comb_5|state~15                   ; Lost fanout        ;
+; fsm:comb_5|state~16                   ; Lost fanout        ;
+; fsm:comb_5|state~17                   ; Lost fanout        ;
+; fsm:comb_5|state~18                   ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 72    ;
+; Number of registers using Synchronous Clear  ; 30    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 28    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; lfsr:comb_7|count[7]                   ; 6       ;
+; div2500:comb_4|count[2]                ; 3       ;
+; div2500:comb_4|count[4]                ; 3       ;
+; div2500:comb_4|count[5]                ; 3       ;
+; div2500:comb_4|count[6]                ; 3       ;
+; div2500:comb_4|count[7]                ; 3       ;
+; div2500:comb_4|count[8]                ; 3       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ex8_top|div2500:comb_4|count[0] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ex8_top|div2500:comb_4|count[2] ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |ex8_top|fsm:comb_5|Selector8    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div_50000:comb_3 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; BIT_SZ         ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div2500:comb_4 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; BIT_SZ         ; 12    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fsm:comb_5 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; BIT_SZ         ; 13    ; Signed Integer                 ;
+; IDLE           ; 0000  ; Unsigned Binary                ;
+; FIRST_LED      ; 0001  ; Unsigned Binary                ;
+; SECOND_LED     ; 0011  ; Unsigned Binary                ;
+; THIRD_LED      ; 0010  ; Unsigned Binary                ;
+; FOURTH_LED     ; 0110  ; Unsigned Binary                ;
+; FIFTH_LED      ; 0111  ; Unsigned Binary                ;
+; SIXTH_LED      ; 0101  ; Unsigned Binary                ;
+; SEVENTH_LED    ; 0100  ; Unsigned Binary                ;
+; EIGHTH_LED     ; 1100  ; Unsigned Binary                ;
+; NINTH_LED      ; 1101  ; Unsigned Binary                ;
+; TENTH_LED      ; 1111  ; Unsigned Binary                ;
+; DELAY          ; 1110  ; Unsigned Binary                ;
+; TURNOFF        ; 1010  ; Unsigned Binary                ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd_16:comb_8|add3_ge5:A31"                                                      ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; iW[3] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; oA[3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd_16:comb_8|add3_ge5:A19" ;
++-------+-------+----------+---------------------------------+
+; Port  ; Type  ; Severity ; Details                         ;
++-------+-------+----------+---------------------------------+
+; iW[3] ; Input ; Info     ; Stuck at GND                    ;
++-------+-------+----------+---------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd_16:comb_8|add3_ge5:A10" ;
++-------+-------+----------+---------------------------------+
+; Port  ; Type  ; Severity ; Details                         ;
++-------+-------+----------+---------------------------------+
+; iW[3] ; Input ; Info     ; Stuck at GND                    ;
++-------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd_16:comb_8|add3_ge5:A4" ;
++-------+-------+----------+--------------------------------+
+; Port  ; Type  ; Severity ; Details                        ;
++-------+-------+----------+--------------------------------+
+; iW[3] ; Input ; Info     ; Stuck at GND                   ;
++-------+-------+----------+--------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd_16:comb_8|add3_ge5:A1" ;
++-------+-------+----------+--------------------------------+
+; Port  ; Type  ; Severity ; Details                        ;
++-------+-------+----------+--------------------------------+
+; iW[3] ; Input ; Info     ; Stuck at GND                   ;
++-------+-------+----------+--------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd_16:comb_8"                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                       ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; B    ; Input ; Warning  ; Input port expression (14 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "B[15..14]" will be connected to GND. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 72                          ;
+;     ENA               ; 28                          ;
+;     SCLR              ; 30                          ;
+;     plain             ; 14                          ;
+; arriav_lcell_comb     ; 248                         ;
+;     arith             ; 57                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 56                          ;
+;     normal            ; 191                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 25                          ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 112                         ;
+;         5 data inputs ; 11                          ;
+;         6 data inputs ; 24                          ;
+; boundary_port         ; 50                          ;
+;                       ;                             ;
+; Max LUT depth         ; 13.00                       ;
+; Average LUT depth     ; 6.52                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Wed Nov 30 17:35:25 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ex8 -c ex8_top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/george/Documents/VERI 17.11.16/Part 2/ex6/add3_ge5.v
+    Info (12023): Found entity 1: add3_ge5 File: /home/george/Documents/VERI 17.11.16/Part 2/ex6/add3_ge5.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/george/Documents/VERI 17.11.16/My Lib/hex_to_7seg.v
+    Info (12023): Found entity 1: hex_to_7seg File: /home/george/Documents/VERI 17.11.16/My Lib/hex_to_7seg.v Line: 1
+Warning (10229): Verilog HDL Expression warning at div_50000.v(12): truncated literal to match 4 bits File: /home/george/Documents/VERI 17.11.16/My Lib/div_50000.v Line: 12
+Warning (10229): Verilog HDL Expression warning at div_50000.v(17): truncated literal to match 4 bits File: /home/george/Documents/VERI 17.11.16/My Lib/div_50000.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file /home/george/Documents/VERI 17.11.16/My Lib/div_50000.v
+    Info (12023): Found entity 1: div_50000 File: /home/george/Documents/VERI 17.11.16/My Lib/div_50000.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/george/Documents/VERI 17.11.16/My Lib/bin2bcd_16.v
+    Info (12023): Found entity 1: bin2bcd_16 File: /home/george/Documents/VERI 17.11.16/My Lib/bin2bcd_16.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file ex8_top.v
+    Info (12023): Found entity 1: ex8_top File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file div2500.v
+    Info (12023): Found entity 1: div2500 File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/div2500.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lfsr.v
+    Info (12023): Found entity 1: lfsr File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/lfsr.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fsm.v
+    Info (12023): Found entity 1: fsm File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/fsm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file delay.v
+    Info (12023): Found entity 1: delay File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/delay.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at ex8_top.v(24): instance has no name File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 24
+Critical Warning (10846): Verilog HDL Instantiation warning at ex8_top.v(26): instance has no name File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 26
+Critical Warning (10846): Verilog HDL Instantiation warning at ex8_top.v(28): instance has no name File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at ex8_top.v(29): instance has no name File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 29
+Critical Warning (10846): Verilog HDL Instantiation warning at ex8_top.v(31): instance has no name File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 31
+Critical Warning (10846): Verilog HDL Instantiation warning at ex8_top.v(33): instance has no name File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 33
+Info (12127): Elaborating entity "ex8_top" for the top level hierarchy
+Info (12128): Elaborating entity "div_50000" for hierarchy "div_50000:comb_3" File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 24
+Info (12128): Elaborating entity "div2500" for hierarchy "div2500:comb_4" File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 26
+Info (12128): Elaborating entity "fsm" for hierarchy "fsm:comb_5" File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 28
+Warning (10240): Verilog HDL Always Construct warning at fsm.v(45): inferring latch(es) for variable "en_lfsr", which holds its previous value in one or more paths through the always construct File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/fsm.v Line: 45
+Warning (10240): Verilog HDL Always Construct warning at fsm.v(45): inferring latch(es) for variable "start_delay", which holds its previous value in one or more paths through the always construct File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/fsm.v Line: 45
+Info (10041): Inferred latch for "start_delay" at fsm.v(45) File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/fsm.v Line: 45
+Info (10041): Inferred latch for "en_lfsr" at fsm.v(45) File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/fsm.v Line: 45
+Info (12128): Elaborating entity "lfsr" for hierarchy "lfsr:comb_7" File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 29
+Warning (10230): Verilog HDL assignment warning at lfsr.v(10): truncated value with size 16 to match size of target (14) File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/lfsr.v Line: 10
+Warning (10230): Verilog HDL assignment warning at lfsr.v(14): truncated value with size 15 to match size of target (14) File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/lfsr.v Line: 14
+Info (12128): Elaborating entity "bin2bcd_16" for hierarchy "bin2bcd_16:comb_8" File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 31
+Info (12128): Elaborating entity "add3_ge5" for hierarchy "bin2bcd_16:comb_8|add3_ge5:A1" File: /home/george/Documents/VERI 17.11.16/My Lib/bin2bcd_16.v Line: 26
+Info (12128): Elaborating entity "delay" for hierarchy "delay:comb_9" File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 33
+Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "hex_to_7seg:SEG0" File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 36
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch fsm:comb_5|en_lfsr has unsafe behavior File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/fsm.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fsm:comb_5|state.DELAY File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/fsm.v Line: 7
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 19
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file /home/george/Documents/VERI 17.11.16/Part 2/ex8/output_files/ex8_top.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 13
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 13
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/george/Documents/VERI 17.11.16/Part 2/ex8/ex8_top.v Line: 13
+Info (21057): Implemented 297 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 45 output pins
+    Info (21061): Implemented 247 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 1019 megabytes
+    Info: Processing ended: Wed Nov 30 17:35:37 2016
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:26
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/george/Documents/VERI 17.11.16/Part 2/ex8/output_files/ex8_top.map.smsg.
+
+

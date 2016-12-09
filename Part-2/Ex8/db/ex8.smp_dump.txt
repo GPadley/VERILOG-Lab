@@ -1,0 +1,16 @@
+
+State Machine - |ex8_top|fsm:comb_5|state
+Name state.TENTH_LED state.DELAY state.NINTH_LED state.EIGHTH_LED state.TURNOFF state.FIFTH_LED state.FOURTH_LED state.SIXTH_LED state.SEVENTH_LED state.SECOND_LED state.THIRD_LED state.FIRST_LED state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.FIRST_LED 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.THIRD_LED 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.SECOND_LED 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.SEVENTH_LED 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.SIXTH_LED 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.FOURTH_LED 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.FIFTH_LED 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.TURNOFF 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.EIGHTH_LED 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.NINTH_LED 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.DELAY 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.TENTH_LED 1 0 0 0 0 0 0 0 0 0 0 0 1 
