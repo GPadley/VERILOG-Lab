@@ -1,0 +1,25 @@
+module div_50000(
+		clockout,
+		clockin
+		);
+		
+		input clockin;
+		output reg clockout;
+
+		parameter BIT_SZ = 16;
+		reg [BIT_SZ-1:0] count;
+	
+	initial count = 4'h1388;
+	
+	always @ (posedge clockin) 
+		if (count == 1'b1) begin
+			clockout <= 1'b1;
+			count <= 4'h1388;
+		end
+		else begin
+			clockout <= 1'b0;
+			count <= count - 1'b1;
+		end
+	
+			
+endmodule		

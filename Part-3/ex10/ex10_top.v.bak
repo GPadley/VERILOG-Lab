@@ -1,0 +1,9 @@
+module ex10_top(
+		CLOCK_50,
+		SW,
+		DAC_CS,
+		DAC_SDI,
+		DAC_LD,
+		DAC_SCK
+		);
+		input 
