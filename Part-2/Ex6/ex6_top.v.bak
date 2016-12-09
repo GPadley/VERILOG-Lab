@@ -1,0 +1,20 @@
+module ex6_top(
+		clock,
+		enable,
+		reset,
+		HEX0,
+		HEX1,
+		HEX2,
+		HEX3,
+		HEX4
+);
+	input clock;
+	input enable;
+	input reset;
+	output [6:0] HEX0;
+	output [6:0] HEX1;
+	output [6:0] HEX2;
+	output [6:0] HEX3;
+	output [6:0] HEX4;
+
+	
