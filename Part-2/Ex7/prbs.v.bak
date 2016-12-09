@@ -1,0 +1,18 @@
+module prbs(
+		enable,
+		clock,
+		count
+		);
+		
+		parameter BIT_SZ = 8;
+		input clock;
+		input enable;
+		output [BIT_SZ-1:0] count;
+		reg [BIT_SZ-1:0] count;
+	
+		always @ (posedge clock)
+			if(enable = 1'b1)
+				count <= {count [6:0], count[6]^count[2]};
+				
+			
+endmodule
