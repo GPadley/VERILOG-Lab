@@ -6,12 +6,14 @@ The aim of this experiment is to show how much easier it is to program something
 
 We typed in:
 
-	module hex_to_7seg		(out, in);
+	module hex_to_7seg (
+		out,
+		in
+		);
 
 		output	[6:0] out;
-		input		[3:0] in;
-		
-		reg		[6:0] out;
+		input	[3:0] in;
+		reg	[6:0] out;
 		
 		always @ (*)
 			case (in)
@@ -40,3 +42,22 @@ Module defines the start of the code and the name of the module comes after it, 
 
 To enable the switches to alter the display, we need to create a top file in which has the switches as an input and the 7 segment display as its output which then calls the module "**hex_to_7seg**" to change the display. The top file is made by creating a new Verilog file and entering this code:
 
+	module ex_2_top(
+		SW,
+		HEX0
+	);
+
+		input	 [3:0] SW;
+		output   [6:0] HEX0;
+		
+		hex_to_7seg		SEG0 (HEX0, SW);
+		
+	endmodule
+	
+Before we can compile and run this, we need to assign the pins, to do this instead of the way in which we defined them in experiment 1, instead Professor Cheung provided us with a text file called "**pin_assignment.txt**"" which defines the pins for us. To add this to the project the file "**ex2_top.qsf**" needs to be opened and once that is opened go to:
+
+**Edit -> Insert File: pin_assignment.txt**
+
+Note that you should leave all other text within the file, do not delete it, because otherwise the program will not compile.
+
+Once this has been done, you should be able to compile the file and program the board and run it straight away.
