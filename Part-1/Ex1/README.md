@@ -44,6 +44,8 @@ Once this is done when you change the 4 right most switches you should see the 7
 
 The point of doing this is that it becomes very complicated to implement designs like this due to the large number of inputs and outputs causing it to become messy and difficult to understand upon inspection. In the next exercise, we will look at implementing this through the use of Verilog, so how us how this can work.
 
+So the next thing we did was create a TimeQuest Timing Datasheet to see how long it takes the input to change the output (RR meaning the input rising to the output rising and so on) Between the change in temperature, the difference on average was about  0.4 ns to 0.5 ns increase between the temperature increase as you can see below. Left 0°, right 85°.
 
+![Imput to output times](https://github.com/GPadley/VERILOG-Lab/blob/master/Part-1/Ex1/Speeds.png)
 
 ![Block Diagram of 7 Segment Display](https://github.com/GPadley/VERILOG-Lab/blob/master/Part-1/Ex1/Block%20Diagram.png "Complete Schematic")
