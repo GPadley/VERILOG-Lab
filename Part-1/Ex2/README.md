@@ -7,5 +7,15 @@ The aim of this experiment is to show how much easier it is to program something
 We typed in:
 
 '''
+module ex_2_top(
+		SW,
+		HEX0
+);
 
+		input		[3:0] SW;
+		output   [6:0] HEX0;
+		
+		hex_to_7seg		SEG0 (HEX0, SW);
+		
+endmodule
 '''
