@@ -6,17 +6,17 @@ module ex_4_top(
 		HEX3
 );
 		input		[9:0] SW;
-		wire		[15:0] DO;
+		wire		[3:0] D0, D1, D2, D3;
 		output   [6:0] HEX0;
 		output   [6:0] HEX1;
 		output   [6:0] HEX2;
 		output   [6:0] HEX3;
 
-		bin2bcd_16 ({6'b0, SW[9:0]}, DO[3:0], DO[7:4], DO[11:8], DO[15:12]);
+		bin2bcd_10 (SW, D0, D1, D2, D3);
 		
-		dec_to_7seg		SEG0 (HEX0, DO[3:0]);
-		dec_to_7seg		SEG1 (HEX1, DO[7:4]);
-		dec_to_7seg		SEG2 (HEX2, DO[11:8]);
-		dec_to_7seg		SEG3 (HEX3, DO[15:12]);
+		dec_to_7seg		SEG0 (HEX0, D0);
+		dec_to_7seg		SEG1 (HEX1, D1);
+		dec_to_7seg		SEG2 (HEX2, D2);
+		dec_to_7seg		SEG3 (HEX3, D3);
 		
 endmodule
