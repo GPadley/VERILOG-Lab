@@ -33,3 +33,10 @@ We typed in:
 			4'hf: out = 7'b0001110;
 		endcase
 	endmodule
+
+Module defines the start of the code and the name of the module comes after it, in this case "**hex_to_7seg**", what comes in the brackets after are the inputs and the outputs of the module, in this case they are "**in**" and "**out**". They are defined by "**output [6:0] out**" meaning that "**out**" is an output which is 7 bits in size, and that "**in**" is an input of 4 bits width. To be able to edit the value of "**out**", it must also be defined as a register through "**reg [6:0] out**"
+
+"**always @ (*)**" means that at at any change always enter this. "**case (in)**" means in the case of in being x, the output "**out**" is y, note that the output is active low .
+
+To enable the switches to alter the display, we need to create a top file in which has the switches as an input and the 7 segment display as its output which then calls the module "**hex_to_7seg**" to change the display. The top file is made by creating a new Verilog file and entering this code:
+
