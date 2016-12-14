@@ -9,7 +9,7 @@ module prbs(
 		reg [BIT_SZ-1:0] count;
 		initial count = 7'b000001;
 		always @ (posedge clock) begin
-				count <= {count [5:0], count[6]^count[2]};
+			count <= {count [5:0], count[6]^count[0]};
 		end	
 			
 endmodule
