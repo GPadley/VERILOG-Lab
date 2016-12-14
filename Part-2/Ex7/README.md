@@ -1,6 +1,6 @@
 #  Experiment 7: Linear Feedback Shift Register (LFSR) and PRBS
 
-In this experiment we looked into using shift registers with linear feedback to get a random sequence generator. Using the equation **1+X+X7** when we write the program we start off with 7'b1 and if there is a 1 in place [6:0] X, X[0] or X[6] then we add on 1 to the bottom, except when they both contain 1s. The first 10 expected outputs are:
+In this experiment we looked into using shift registers with linear feedback to get a pseudo random binary sequence generator. Using the equation **1+X+X7** when we write the program we start off with 7'b1 and if there is a 1 in place [6:0] X, X[0] or X[6] then we add on 1 to the bottom, except when they both contain 1s. The first 10 expected outputs are:
 
 | Entry   | Output [Bin]| Decimal | Hexadecimal |
 | --------|------------|-------|-------|
