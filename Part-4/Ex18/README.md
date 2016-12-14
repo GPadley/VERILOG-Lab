@@ -2,7 +2,7 @@
 
 With this experiment I changed the input into the FIFO from the data input into the data output in which then when we compiled and programmed the box it saturated and gave a lot of noise, so we increased the divide from 2 to 4 which solved the problem and provided a multiple echo.
 
-        module processor (sysclk, data_in, data_delay, data_out);
+    module processor (sysclk, data_in, data_delay, data_out);
 
 	input				sysclk;		// system clock
 	input [9:0]		data_in;		// 10-bit input data
