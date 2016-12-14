@@ -1,6 +1,6 @@
 # Experiment 17: Echo Synthesizer with Fixed Delay
 
-For the echo we use a FIFO in which means first in, first out, so when we start getting data in, it is inputted into the FIFO there are 8192 memory slots, so due to the 10 kHz load input for it to become full 8196 clock cycles must pass which is 0.8196 s delay. Within the processor, we take the data in and the FIFO data, quarter the data from the FIFO (echoes are quieter), add them together and then output, still with the offsets being taken off and added together. 
+For the echo we use a FIFO in which means first in, first out, so when we start getting data in, it is inputted into the FIFO there are 8192 memory slots, so due to the 10 kHz load input for it to become full 8196 clock cycles must pass which is 0.8196 s delay. Within the processor, we take the data in and the FIFO data, halve the data from the FIFO (echoes are quieter), add them together and then output, still with the offsets being taken off and added together. 
 
     module processor (sysclk, data_in, data_delay, data_out);
 
