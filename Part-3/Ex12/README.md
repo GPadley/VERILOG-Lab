@@ -2,6 +2,8 @@
 
 In this experiment we looked at how we can use ROM to hold all the levels of a sinewave which axis offset start is at 512 (1024/2) so we are able to have the whole wave, to access the memory locations we used the switches which then accessed the ROM which was holding the data and cycling through all the values gives you a complete sine wave.
 
+**D[9:0] = int(511*sin(A[9:0]*2*pi/1024)+512)**
+
     module ex12_top(
 			CLOCK_50,
 			SW,
