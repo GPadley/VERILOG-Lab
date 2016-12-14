@@ -17,3 +17,6 @@ In this experiment we looked into using shift registers with linear feedback to 
 
 This is caused by when the clock edge comes in:
 
+    count <= {count [5:0], count[6]^count[0]};
+    
+Which shifts the bottom 6 bits to the left and XORs the 6th and 0th bit together to get the output.
