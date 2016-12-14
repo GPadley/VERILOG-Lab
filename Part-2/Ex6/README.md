@@ -44,7 +44,7 @@ Slow 1100mV 85C FMax is 239.64MHz, and 0C FMax is 253.42MHz
 
 What you can also see from the data in the table are the setup and hold times for the program to allow it to work out what the maximum frequency is.
 
-For the cascade counter, within the divide by 50000, we need to have the clock come in and every positive edge it counts up 1, once it gets to 49999, the output goes high and then immediately low after the next clock cycle goes in.
+For the cascade counter, within the divide by 50000, we need to have the clock come in and every positive edge it counts down from 50000, once it gets to 1, the output goes high and then immediately low after the next clock cycle goes in.
 
 	module div_50000(
 		clockout,
