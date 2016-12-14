@@ -1,6 +1,6 @@
 # Experiment 14: A Variable Sinewave Generator
 
-To create a variable sinewave generator you work by skipping through values within the ROM, this is done by having the value of the switch be added onto a counter every clock cycle and used to access the ROM, cycling you through the values, once you get to a wave of 5000 kHz you would expect that increasing the switches would increase the frequency, but sadly due to the sampling frequency being 10000 kHz you get aliasing to happen which causes the frequency to decrease linearly the more you increase it past that point.
+To create a variable sinewave generator you work by skipping through values within the ROM, this is done by having the value of the switch be added onto a counter every clock cycle and used to access the ROM, cycling you through the values, once you get to a wave of 5 kHz you would expect that increasing the switches would increase the frequency, but sadly due to the sampling frequency being 10 kHz you get aliasing to happen which causes the frequency to decrease linearly the more you increase it past that point.
 
     module addr_reg(
 			clk,
