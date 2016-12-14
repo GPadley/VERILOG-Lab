@@ -17,7 +17,7 @@ For the echo we use a FIFO in which means first in, first out, so when we start 
 	parameter 		ADC_OFFSET = 10'h181;
 	parameter 		DAC_OFFSET = 10'h200;
 
-	assign x = {2'b00, data_delay[9:2]};		// x is input in 2's complement
+	assign x = {1'b0, data_delay[9:1]};		// x is input in 2's complement
 	
 	assign y = data_in[9:0] + x;
 	assign z = y - ADC_OFFSET;
