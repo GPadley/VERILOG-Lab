@@ -1,1 +1,29 @@
 # Experiment 17: Echo Synthesizer with Fixed Delay
+
+For the echo we use a FIFO in which means first in, first out, so when we start getting data in, it is inputted into the FIFO there are 8192 memory slots, so due to the 10 kHz
+
+    module processor (sysclk, data_in, data_delay, data_out);
+
+	input				sysclk;		// system clock
+	input [9:0]		data_in;		// 10-bit input data
+	input [9:0]		data_delay;
+	output [9:0] 	data_out;	// 10-bit output data
+
+	wire				sysclk;
+	wire [9:0]		data_in;
+	reg [9:0] 		data_out;
+	wire [9:0]		x,y,z;
+
+	parameter 		ADC_OFFSET = 10'h181;
+	parameter 		DAC_OFFSET = 10'h200;
+
+	assign x = {2'b00, data_delay[9:2]};		// x is input in 2's complement
+	
+	assign y = data_in[9:0] + x;
+	assign z = y - ADC_OFFSET;
+	
+	//  Now clock y output with system clock
+	always @(posedge sysclk)
+		data_out <=  z + DAC_OFFSET;
+		
+    endmodule
