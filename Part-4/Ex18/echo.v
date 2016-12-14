@@ -21,10 +21,9 @@ module processor (sysclk, data_in, data_delay, data_out);
 	parameter 		ADC_OFFSET = 10'h181;
 	parameter 		DAC_OFFSET = 10'h200;
 
-	assign x = {2'b00, data_delay[9:2]};		// x is input in 2's complement
+	assign x = data_in[9:0] - ADC_OFFSET;		// x is input in 2's complement
 	
-	assign y = data_in[9:0] + x;
-	assign z = y - ADC_OFFSET;
+	assign y = x - {2'b0, data_delay[9:2]};
 	
 	//  Now clock y output with system clock
 	always @(posedge sysclk)
