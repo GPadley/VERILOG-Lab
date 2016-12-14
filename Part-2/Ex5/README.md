@@ -23,5 +23,10 @@ The 8 bit counter designed was:
     
 The way that the code works is that when there is a positive clock edge and the enable is active high, the count increments by 1, when the count reaches 8'b11111111 and one more is added on, it overflows and returns to 8'b0 and restarts the counting again.
 
-# Simulation of the counter in ModelSim
+# Simulation of the Counter in ModelSim
 
+Using ModelSim, running "**tb_counter.do**" you get this output:
+
+When enable is high and the positive clock edge arrives, the counter increments.
+
+![ModelSim](https://github.com/GPadley/VERILOG-Lab/blob/master/Part-2/Ex5/Counter.png)
