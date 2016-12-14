@@ -44,6 +44,19 @@ Slow 1100mV 85C FMax is 239.64MHz, and 0C FMax is 253.42MHz
 
 What you can also see from the data in the table are the setup and hold times for the program to allow it to work out what the maximum frequency is.
 
+The reason that TimeQuest Timing Analyzer is red due to Unconstrained Paths:
+
+|Property|Setup|Hold|
+|--------|-----|----|
+|Illegal Clocks | 0 | 0 |
+| Unconstrained Clocks | 0 | 0 |
+| Unconstrained Input Ports | 2 | 2 |
+| Unconstrained Input Port Paths | 32 | 32 |
+| Unconstrained Output Ports | 35 | 35 |
+| Unconstrained Output Port Paths | 490 | 490 |
+
+These mean that from the Synopsys Design Constraints (.sdc file) the setup and hold times for all the input ports and their paths haven't been specified.
+
 For the cascade counter, within the divide by 50000, we need to have the clock come in and every positive edge it counts down from 50000, once it gets to 1, the output goes high and then immediately low after the next clock cycle goes in.
 
 	module div_50000(
