@@ -46,3 +46,28 @@ What you can also see from the data in the table are the setup and hold times fo
 
 For the cascade counter, within the divide by 50000, we need to have the clock come in and every positive edge it counts up 1, once it gets to 49999, the output goes high and then immediately low after the next clock cycle goes in.
 
+	module div_50000(
+		clockout,
+		clockin
+		);
+		
+		input clockin;
+		output reg clockout;
+
+		parameter BIT_SZ = 16;
+		reg [BIT_SZ-1:0] count;
+	
+	initial count = 4'hc350;
+	
+	always @ (posedge clockin) 
+		if (count == 1'b1) begin
+			clockout <= 1'b1;
+			count <= 4'hc350;
+		end
+		else begin
+			clockout <= 1'b0;
+			count <= count - 1'b1;
+		end
+	
+			
+	endmodule		
