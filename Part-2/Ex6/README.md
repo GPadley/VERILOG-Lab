@@ -40,7 +40,10 @@ To define a clock, we have to create a .sdc file in which allows us to define th
 
     create_clock -name "CLOCK_50"	-period	20.000ns [get_ports {CLOCK_50}]
 
-Slow 1100mV 85C FMax is 239.64MHz, and 0C FMax is 253.42MHz
+| Temp (C)| FMax (MHz) | 
+|------|------|
+|85 |422.48 |
+| 0 | 445.24|
 
 What you can also see from the data in the table are the setup and hold times for the program to allow it to work out what the maximum frequency is.
 
